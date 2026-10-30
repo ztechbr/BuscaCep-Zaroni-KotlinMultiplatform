@@ -18,3 +18,17 @@ Correspondência entre os requisitos do enunciado e o código. Os caminhos são 
 | R12 | Informar erro por `Snackbar` | `CepViewModel.mensagensErro`; `App.kt` (`SnackbarHost` + `LaunchedEffect`); textos em `presentation/MensagensErro.kt` | `cepInexistenteGeraMensagemERestabeleceControles`, `falhaDeRedeNaoDeixaEstadoPresoEmCarregamento` |
 
 Os itens de interface (R02, R04, R08 e a exibição da Snackbar) não têm teste de UI automatizado; a verificação deles é feita executando o aplicativo.
+
+## Conferência manual (versão 1.1.0)
+
+Executada no emulador Android (API 37) e no Desktop (Windows), comparando com as Figuras 1 a 4 do enunciado:
+
+| Cenário | Android | Desktop |
+| --- | --- | --- |
+| Campo vazio ou com sete dígitos: "Buscar" desabilitado (Figura 1) | ok | ok (campo vazio) |
+| Durante a consulta: campo e botão desabilitados, indicador circular dentro do botão, resultados limpos (Figura 2) | ok | — |
+| CEP `85504-430`: Rua Itabira, Bancários, Pato Branco, PR; controles reabilitados (Figura 3) | ok | ok |
+| CEP inexistente `99999-999`: Snackbar e resultados vazios (Figura 4) | ok (conferido na 1.0.0) | ok |
+| Sem conexão: Snackbar de falha de conexão e controles reabilitados | ok | — |
+
+"—" indica cenário não conferido manualmente naquela plataforma; o comportamento é o mesmo código compartilhado, coberto pelos testes de `CepViewModelTest`. O iOS depende de validação em um Mac com Xcode.
