@@ -9,7 +9,7 @@ Trabalho final da disciplina *Arquiteturas e Padrões Modernos para Desenvolvime
 | Versão | Data | Commit | Descrição |
 | --- | --- | --- | --- |
 | 1.0.0 | 30/10/2026 | `64574c0` | Busca de CEP com ViaCEP para Android, Desktop e iOS |
-| 1.1.0 | 30/10/2026 | `PENDENTE` | Tema claro/escuro com contraste WCAG AA, fonte Inter e leiaute alinhado às figuras do enunciado |
+| 1.1.0 | 30/10/2026 | `80422bd` | Tema claro/escuro com contraste WCAG AA, fonte Inter e leiaute alinhado às figuras do enunciado |
 
 A versão do aplicativo também está em `androidApp/build.gradle.kts` (`versionName`), `desktopApp/build.gradle.kts` (`packageVersion`) e `iosApp/Configuration/Config.xcconfig` (`MARKETING_VERSION`). Para conferir o commit da cópia local, use `git log -1 --format="%h %ad" --date=short`.
 
