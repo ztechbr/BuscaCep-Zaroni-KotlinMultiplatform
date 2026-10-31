@@ -121,6 +121,9 @@ A lógica é coberta por testes automatizados em `shared/src/commonTest`, execut
 | --- | --- | --- | --- |
 | 1.0.0 | 30/10/2026 | `64574c0` | Busca de CEP com ViaCEP para Android, Desktop e iOS |
 | 1.1.0 | 30/10/2026 | `80422bd` | Tema claro/escuro com contraste WCAG AA, fonte Inter e leiaute alinhado às figuras do enunciado |
+| 1.2.0 | 31/10/2026 | `12f8a46` | Tema único com fundo branco nas três plataformas, script `runall.sh` e README ampliado com capturas e arquitetura |
+
+Última revisão: 31/10/2026, após o `./gradlew clean`.
 
 A versão do aplicativo também está em `androidApp/build.gradle.kts` (`versionName`), `desktopApp/build.gradle.kts` (`packageVersion`) e `iosApp/Configuration/Config.xcconfig` (`MARKETING_VERSION`). Para conferir o commit da cópia local, use `git log -1 --format="%h %ad" --date=short`.
 
@@ -244,15 +247,17 @@ Os testes ficam em `shared/src/commonTest` e não acessam a internet: a ViewMode
 | `CepViewModelTest` | Estado durante a consulta, sucesso, limpeza do resultado anterior, CEP inexistente, falha de rede, cliques repetidos |
 | `ViaCepRepositoryTest` | Conversão do JSON, campos extras e ausentes, `erro` booleano e texto, status HTTP de erro, corpo inválido, falha de rede |
 
-## Preparando a entrega
+## Ajustes finais pré-entrega
 
-Antes de compactar o projeto para o Moodle:
+Antes da entrega no Moodle, foram realizados os seguintes ajustes:
 
-```bash
-./gradlew clean                            # Windows: gradlew.bat clean
-```
+- Os arquivos gerados por builds foram removidos com o comando abaixo:
 
-Depois, **não inclua** no arquivo: `build/` (de todos os módulos), `.gradle/`, `.kotlin/`, `.idea/`, `local.properties`, `iosApp/build/`, `xcuserdata/` nem `*.iml`.
+  ```bash
+  ./gradlew clean                            # Windows: gradlew.bat clean
+  ```
+
+- Os itens que o `clean` não remove estão no `.gitignore`, para não constarem no zip gerado a partir do repositório: `build/` (de todos os módulos, incluindo `iosApp/build/`), `.gradle/`, `.kotlin/`, `.idea/`, `local.properties`, `xcuserdata/` e `*.iml`.
 
 ## Limitações
 
