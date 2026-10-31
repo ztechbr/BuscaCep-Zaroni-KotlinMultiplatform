@@ -1,7 +1,9 @@
 package io.ztechnologies.buscacep
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
@@ -9,7 +11,10 @@ import androidx.compose.ui.tooling.preview.Preview
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
+        // O fundo é sempre branco: os ícones das barras do sistema ficam
+        // escuros mesmo com o aparelho em modo escuro.
+        val estiloBarras = SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT)
+        enableEdgeToEdge(statusBarStyle = estiloBarras, navigationBarStyle = estiloBarras)
         super.onCreate(savedInstanceState)
 
         setContent {

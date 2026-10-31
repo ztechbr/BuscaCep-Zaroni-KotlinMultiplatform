@@ -31,4 +31,4 @@ Executada no emulador Android (API 37) e no Desktop (Windows), comparando com as
 | CEP inexistente `99999-999`: Snackbar e resultados vazios (Figura 4) | ok (conferido na 1.0.0) | ok |
 | Sem conexão: Snackbar de falha de conexão e controles reabilitados | ok | — |
 
-"—" indica cenário não conferido manualmente naquela plataforma; o comportamento é o mesmo código compartilhado, coberto pelos testes de `CepViewModelTest`. O iOS depende de validação em um Mac com Xcode.
+"—" indica cenário não conferido manualmente naquela plataforma; o comportamento é o mesmo código compartilhado, coberto pelos testes de `CepViewModelTest`. No iOS, a consulta com sucesso foi conferida no simulador do iPhone 17 (iOS 27.0), como mostra a captura no README.

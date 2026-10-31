@@ -1,10 +1,8 @@
 package io.ztechnologies.buscacep.presentation
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
-import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -19,8 +17,8 @@ import buscacep.shared.generated.resources.inter_semibold
 import org.jetbrains.compose.resources.Font
 
 /**
- * Tema do aplicativo, com versões clara e escura que acompanham a
- * preferência do sistema (Android, iOS e Desktop).
+ * Tema único do aplicativo, com fundo branco no Android, no iOS e no
+ * Desktop, independentemente do modo claro ou escuro do sistema.
  *
  * As cores seguem os papéis do Material 3. Todos os pares de texto sobre
  * fundo usados na tela atingem pelo menos 4,5:1 de contraste (WCAG AA) e
@@ -36,7 +34,7 @@ import org.jetbrains.compose.resources.Font
 @Composable
 fun TemaBuscaCep(conteudo: @Composable () -> Unit) {
     MaterialTheme(
-        colorScheme = if (isSystemInDarkTheme()) CoresEscuras else CoresClaras,
+        colorScheme = Cores,
         typography = tipografiaInter(),
         content = conteudo,
     )
@@ -77,14 +75,14 @@ private fun tipografiaInter(): Typography {
     }
 }
 
-private val CoresClaras: ColorScheme = lightColorScheme(
+private val Cores: ColorScheme = lightColorScheme(
     primary = Color(0xFF0B57D0),
     onPrimary = Color(0xFFFFFFFF),
     primaryContainer = Color(0xFFD3E3FD),
     onPrimaryContainer = Color(0xFF041E49),
-    background = Color(0xFFF9F9FF),
+    background = Color(0xFFFFFFFF),
     onBackground = Color(0xFF191C20),
-    surface = Color(0xFFF9F9FF),
+    surface = Color(0xFFFFFFFF),
     onSurface = Color(0xFF191C20),
     surfaceVariant = Color(0xFFE1E2EC),
     onSurfaceVariant = Color(0xFF44474F),
@@ -96,25 +94,4 @@ private val CoresClaras: ColorScheme = lightColorScheme(
     inversePrimary = Color(0xFFA8C7FA),
     error = Color(0xFFBA1A1A),
     onError = Color(0xFFFFFFFF),
-)
-
-private val CoresEscuras: ColorScheme = darkColorScheme(
-    primary = Color(0xFFA8C7FA),
-    onPrimary = Color(0xFF062E6F),
-    primaryContainer = Color(0xFF0842A0),
-    onPrimaryContainer = Color(0xFFD3E3FD),
-    background = Color(0xFF111318),
-    onBackground = Color(0xFFE2E2E9),
-    surface = Color(0xFF111318),
-    onSurface = Color(0xFFE2E2E9),
-    surfaceVariant = Color(0xFF44474F),
-    onSurfaceVariant = Color(0xFFC4C6D0),
-    surfaceContainerLow = Color(0xFF191C20),
-    outline = Color(0xFF8E9099),
-    outlineVariant = Color(0xFF44474F),
-    inverseSurface = Color(0xFFE2E2E9),
-    inverseOnSurface = Color(0xFF2E3036),
-    inversePrimary = Color(0xFF0B57D0),
-    error = Color(0xFFFFB4AB),
-    onError = Color(0xFF690005),
 )
